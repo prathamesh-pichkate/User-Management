@@ -1,8 +1,11 @@
 # 📋 PROJECT SUMMARY - User Management System
 
 ## Overview
-This is a complete, production-ready MERN stack User Management application built for the Full Stack Intern assessment at Bits and Volts Pvt. Ltd.
+User Management System is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, Node.js).
+The project is designed to manage user information with complete CRUD functionality, following a clean and component-based architecture.
 
+The application allows users to add, view, edit, delete, search, and export user data, while maintaining a responsive and user-friendly interface.
+Profile images are handled using Cloudinary for secure and scalable image storage.
 ---
 
 ## 🎯 What's Included
