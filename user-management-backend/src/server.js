@@ -15,13 +15,13 @@ const allowedOrigins = process.env.FRONTEND_URLS.split(",");
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow server-to-server & Postman
+    // Allow Postman / server-side requests
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.includes(origin)) {
-      callback(null, true);
+      return callback(null, true);
     } else {
-      callback(new Error(`CORS blocked for origin: ${origin}`));
+      return callback(new Error(`CORS blocked for origin: ${origin}`));
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE"],
