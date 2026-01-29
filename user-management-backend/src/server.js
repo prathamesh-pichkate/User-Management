@@ -1,32 +1,52 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const connectDB = require('./config/database.js');
-const userRoutes = require('./routes/userRoutes.js');
-const errorHandler = require('./middlewares/errorHandler.js');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const connectDB = require("./config/database.js");
+const userRoutes = require("./routes/userRoutes.js");
+const errorHandler = require("./middlewares/errorHandler.js");
 
 const app = express();
 
 // Connect to MongoDB
 connectDB();
 
+// CORS configuration
+const allowedOrigins = process.env.FRONTEND_URLS.split(",");
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow server-to-server & Postman
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked for origin: ${origin}`));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use("/api/users", userRoutes);
 
-// Health check route
-app.get('/', (req, res) => {
+// Health check
+app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: 'User Management API is running'
+    message: "User Management API is running",
   });
 });
 
-// Error handling middleware (must be last)
+// Error handling (last)
 app.use(errorHandler);
 
 // Start server
