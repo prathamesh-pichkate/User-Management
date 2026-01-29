@@ -1,6 +1,7 @@
 # 📋 PROJECT SUMMARY - User Management System
 
 ## Overview
+---
 User Management System is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, Node.js).
 The project is designed to manage user information with complete CRUD functionality, following a clean and component-based architecture.
 ---
