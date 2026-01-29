@@ -217,10 +217,6 @@ User {
 
 ---
 
-## ✅ Assignment Requirements Met
-
-All requirements from the task document are fully implemented:
-
 ### Backend ✅
 - [x] CRUD API with pagination
 - [x] Search API
@@ -246,33 +242,33 @@ All requirements from the task document are fully implemented:
 ### 1. Install Dependencies
 ```bash
 # Backend
-cd backend
+cd user-management-backend
 npm install
 
 # Frontend
-cd frontend
+cd user-management-frontend
 npm install
 ```
 
 ### 2. Configure Environment
 ```bash
 # Backend
-cp backend/.env.example backend/.env
+cp user-management-backend/.env.example backend/.env
 # Edit .env with your MongoDB URI and Cloudinary credentials
 
 # Frontend
-cp frontend/.env.example frontend/.env
+cp user-management-frontend/.env.example frontend/.env
 # Edit .env with your backend URL
 ```
 
 ### 3. Run Applications
 ```bash
 # Backend (Terminal 1)
-cd backend
-npm start
+cd user-management-backend
+npm run dev
 
 # Frontend (Terminal 2)
-cd frontend
+cd user-management-frontend
 npm start
 ```
 
@@ -371,35 +367,6 @@ This package includes:
 
 ---
 
-## 🎯 Next Steps
-
-1. **Local Testing**
-   - Follow QUICK_START.md
-   - Test all features
-   - Verify everything works
-
-2. **Optional: Deploy to Production**
-   - Follow DEPLOYMENT_GUIDE.md
-   - Deploy backend to Render/Heroku
-   - Deploy frontend to Netlify/Vercel
-
-3. **Submission**
-   - Create ZIP file or GitHub repo
-   - Include all documentation
-   - Share deployment URLs (if deployed)
-
----
-
-## 📞 Support
-
-For setup issues:
-1. Check QUICK_START.md for common problems
-2. Review README.md for detailed setup
-3. Verify environment variables are correct
-4. Check console for error messages
-
----
-
 ## 🏆 Project Highlights
 
 - ⚡ Fast and responsive
@@ -420,9 +387,3 @@ This project is:
 - **Simple** - Easy to understand and maintain
 - **Professional** - Production-quality code
 - **Documented** - Comprehensive guides included
-
-**Ready for submission and deployment! 🚀**
-
----
-
-Created with ❤️ for Bits and Volts Pvt. Ltd. Full Stack Intern Assessment
